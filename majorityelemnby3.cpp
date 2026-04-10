@@ -20,10 +20,16 @@ int majority(int arr[], int n)
             elem = arr[i];
         }
     }
-    if(elem>(n/3))return elem;
+    count = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (elem == arr[i])
+            count++;
+    }
 
+    if(count>n/3)return elem;
+    else return 0;
 
-    return 0;
 }
 
 int main()
