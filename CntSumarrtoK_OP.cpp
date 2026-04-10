@@ -9,28 +9,26 @@ int Arrsumcount(int arr[], int n, int k)
     int prefix[n];
     int sum = 0;
     for (int i = 0; i < n; i++)
-    {   sum+=arr[i];
-        prefix[i]=sum;
+    {
+        sum += arr[i];
+        prefix[i] = sum;
     }
     for (int i = 0; i < n; i++)
     {
-        if(prefix[i]==k)count++;
-        int value=prefix[i]-k;
-        if(mp.find(value)!=mp.end()){
-            
-            count+=mp[value];
-        }
-        if(mp.find(value)==mp.end())
+        if (prefix[i] == k)
+            count++;
+        int value = prefix[i] - k;
+        if (mp.find(value) != mp.end())
         {
-            mp[prefix[i]]=0;
 
+            count += mp[value];
+        }
+        if (mp.find(value) == mp.end())
+        {
+            mp[prefix[i]] = 0;
         }
         mp[prefix[i]]++;
-
     }
-    
-    
-
 
     return count;
 }
