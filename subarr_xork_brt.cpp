@@ -4,26 +4,22 @@ using namespace std;
 
 int zorcont(int arr[], int n, int k)
 {
-int count=0;
-for (int i = 0; i < n; i++)
-{
-    int prev=0;
-for (int j =i; j < n; j++)
-{   
+    int count = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int prev = 0;
+        for (int j = i; j < n; j++)
+        {
 
-
-    prev^=arr[j];
-    if(prev==k){
-        count++;
+            prev ^= arr[j];
+            if (prev == k)
+            {
+                count++;
+            }
+        }
     }
 
-
-}
-
-
-}
-
-return count;
+    return count;
 }
 
 int main()
