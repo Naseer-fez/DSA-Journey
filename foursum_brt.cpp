@@ -48,6 +48,6 @@ int main()
     int arr[] = {1, 2, 3, 4, 5, 6};
     int n = sizeof(arr) / sizeof(arr[0]);
     int k = 11;
-    threesum(arr, n, k);
+    foursum(arr, n, k);
     return 0;
 }
