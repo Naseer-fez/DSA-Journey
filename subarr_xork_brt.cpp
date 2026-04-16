@@ -7,11 +7,13 @@ int zorcont(int arr[], int n, int k)
 int count=0;
 for (int i = 0; i < n; i++)
 {
-    int prev=arr[i];
-for (int j =i+1; j < n; j++)
-{
+    int prev=0;
+for (int j =i; j < n; j++)
+{   
+
+
     prev^=arr[j];
-    if(prev==0){
+    if(prev==k){
         count++;
     }
 
