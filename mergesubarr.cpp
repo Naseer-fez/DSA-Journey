@@ -9,21 +9,20 @@ void mergesub(std::vector<std::vector<int>> &arr)
     // std::vector<std::vector<int>> samp;
     std::vector<std::vector<int>> samp = {{arr[0][0], arr[0][1]}};
     int ind = 0;
-    for (int i = 1; i < arr.size() - 1; i++)
+    for (int i = 1; i < arr.size() ; i++)
     {
-        for (int j = 0; j < arr[0].size(); j++)
-        {
-            if ((samp[ind][0] <= arr[i ][0]) && (samp[ind][1] > arr[i][0]))
+       
+            if ((samp[ind][1] >= arr[i ][0]))
             {
 
-                samp[ind][1] = arr[i][1];
+                samp[ind][1] = std::max(samp[ind][1], arr[i][1]);
             }
             else{
                 ind++;
                 samp.emplace_back(arr[i]);
 
             }
-        }
+       
     }
 
 for (const auto& row : samp) 
