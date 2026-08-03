@@ -26,17 +26,18 @@ int binary(int arr[], int n, int target)
                 {
                     low = mid + 1;
                 }
-            } //NOw the low>mid condtion means the array on the left is not sorted so chck the vaibles values first
-            else{
-                if(arr[low]<=target && target>arr[mid]){
-                    high=mid-1;
-                }else{
-                    low=mid+1;
+            } // NOw the low>mid condtion means the array on the left is not sorted so chck the vaibles values first
+            else
+            {
+                if (arr[low] <= target && target > arr[mid])
+                {
+                    high = mid - 1;
                 }
-
-
+                else
+                {
+                    low = mid + 1;
+                }
             }
-
         }
     }
 
@@ -47,9 +48,9 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int arr[] = {7, 8, 9, 1, 2, 3, 4, 5, 6};
+    int arr[] = {7, 8, 9, 1, 2, 3, 3, 3, 4, 5, 6};
     int n = sizeof(arr) / sizeof(int);
 
-    int value = binary(arr, n,7);
+    int value = binary(arr, n, 7);
     cout << value;
 }
